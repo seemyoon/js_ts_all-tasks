@@ -124,3 +124,58 @@ if (time <= 15) console.log('1 part')
 else if (15 < time && time <= 30) console.log('2 part')
 else if (30 < time && time <= 45) console.log('3 part')
 else if (45 < time && time <= 59) console.log('3 part')
+
+const day = 5
+
+if (day <= 10) console.log('your day in first decade')
+else if (day <= 20) console.log('your day in second decade')
+else if (day <= 30) console.log('your day in third decade')
+else console.log('faulty input')
+
+const number = 7
+switch (number) {
+    case 1:
+        console.log('hw, gymnastics')
+        break
+    case 2:
+        console.log('hw, gymnastics')
+        break
+    case 3:
+        console.log('hw, drink coffee')
+        break
+    case 4:
+        console.log('hw, study English')
+        break
+    case 5:
+        console.log('gymnastics')
+        break
+    case 6:
+        console.log('running morning')
+        break
+    case 7:
+        console.log('relax')
+        break
+    default:
+        console.log('faulty input')
+}
+
+const user_num = [8, 8, 8, 8, 8]
+const user_input = (arr) => {
+    let max = arr[0]
+    const eq = arr.every(item => item === max)
+
+    if (eq) return 'Your nums are equal'
+
+    arr.forEach(item => {
+        if (item > max) {
+            max = item
+        }
+    })
+    return max
+}
+console.log(user_input(user_num));
+
+let asd = null
+if (!asd) asd = 'default'
+
+console.log(asd)

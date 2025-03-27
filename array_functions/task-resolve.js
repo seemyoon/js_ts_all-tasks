@@ -1,3 +1,5 @@
+import {coursesArray} from '../arrays.js'
+
 const str = 'hello world'
 const str2 = 'lorem ipsum'
 const str3 = 'javascript is cool'
@@ -150,3 +152,14 @@ const objOfCards = {
     clubs: cardSuitsReduce[3]
 }
 console.log(objOfCards)
+
+console.log('\nwrite searching all objs, where modules have sass:')
+coursesArray.forEach(courseArray => courseArray.modules.forEach(module => {
+    if (module === 'sass') console.log(courseArray.title);
+}))
+
+console.log('\nwrite searching all objs, where modules have docker:')
+coursesArray.forEach(courseArray => courseArray.modules.forEach(module => {
+    if (module === 'docker') console.log(courseArray.title)
+    }
+))

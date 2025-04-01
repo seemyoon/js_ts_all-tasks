@@ -57,3 +57,137 @@ const clients = [
 
 const filteredClientsByOrderLength = clients.sort((client1, client2) => client1.order.length - client2.order.length)
 console.log(filteredClientsByOrderLength);
+
+function Car(model, creator, year, maxSpeed, engineCapacity) {
+    this.model = model;
+    this.creator = creator;
+    this.year = year;
+    this.maxSpeed = maxSpeed;
+    this.engineCapacity = engineCapacity;
+
+    this.drive = () => {
+        return `їдемо зі швидкістю ${this.maxSpeed} на годину`
+    }
+
+    this.info = () => {
+        return {
+            model: this.model,
+            creator: this.creator,
+            year: this.year,
+            maxSpeedEngine: this.maxSpeed,
+            engineCapacity: this.engineCapacity,
+        }
+    }
+
+    this.increaseMaxSpeed = (newSpeed) => {
+        return this.maxSpeed + newSpeed
+    }
+
+    this.changeValue = (newValue) => {
+        return this.year = newValue
+    }
+
+    this.addDriver = (driver) => {
+        return this.driver = driver
+    }
+
+}
+
+const car1 = new Car('bmw', 'germany', 2001, 300, 400)
+console.log(car1.drive());
+console.log(car1.info())
+console.log(car1.increaseMaxSpeed(30))
+car1.changeValue(2002)
+console.log(car1.year)
+
+function Driver(driverName, isLicense) {
+    this.driverName = driverName;
+    this.isLicense = isLicense;
+}
+
+const driver1 = new Driver('vasya', true)
+const driver2 = new Driver('kuzya', true)
+
+car1.addDriver(driver1)
+car1.addDriver(driver2)
+console.log(car1)
+
+class Car2 {
+
+    constructor(model, creator, year, maxSpeed, engineCapacity) {
+        this.model = model
+        this.creator = creator
+        this.year = year
+        this.maxSpeed = maxSpeed
+        this.engineCapacity = engineCapacity
+    }
+
+    drive() {
+        return `їдемо зі швидкістю ${this.maxSpeed} на годину`
+    }
+
+    info() {
+        return {
+            model: this.model,
+            creator: this.creator,
+            year: this.year,
+            maxSpeed: this.maxSpeed,
+            engineCapacity: this.engineCapacity,
+        }
+    }
+
+    increaseMaxSpeed(newSpeed) {
+        return this.maxSpeed + newSpeed
+    }
+
+    changeValue(newValue) {
+        return this.year = newValue
+    }
+
+    addDriver(driver) {
+        return this.driver = driver
+    }
+}
+
+car2 = new Car2('mers', 'germany', 2004, 350, 700)
+console.log(car2.drive())
+console.log(car2.info())
+console.log(car2.increaseMaxSpeed(75))
+console.log(car2.changeValue(2015))
+
+class Driver2 {
+    constructor(driverName, isLicense) {
+        this.driverName = driverName
+        this.isLicense = isLicense
+    }
+}
+
+const driver3 = new Driver('lyoha', false)
+
+console.log(car2.addDriver(driver3))
+
+console.log(car2)
+
+const arr = ['qwe', 'asd', 132]
+
+
+Array.prototype.customForeach = function (cb) {
+    for (const elem of this) {
+        cb(elem)
+    }
+}
+
+arr.customForeach(i => console.log(i))
+
+
+Array.prototype.customFilter = function (cb) {
+    const newArr = []
+    for (const elem of this) {
+        if (cb(elem)) {
+            newArr.push(elem)
+        }
+    }
+    return newArr
+}
+
+console.log(arr.customFilter(i => typeof i === 'string'))

@@ -34,17 +34,14 @@ Promise
 
 // a, e, c, b, v, n, d, m
 
-// a → microtask 1
-// e → microtask 2
-// (after this microtasks c and v are created)
-// c → microtask 3
-// v → microtask 4
-// b → microtask 5
-// (d is created inside)
-// n → microtask 6
-// (m is created inside)
-// d → microtask 7
-// m → microtask 8
+// a → prints 'a', adds c to microtasks.
+// e → prints 'e', adds v to microtasks.
+// c → prints 'c'.
+// v → prints 'v'.
+// b → prints 'b', adds d to microtasks.
+// n → prints 'n', adds 'm' to microtasks.
+// d → prints 'd'.
+// m → prints 'm'.
 
 //But why is v after b in example?
 // Because .then(function v) is created later than .then(function b) — v is inside e, but e is called after a, and b is in the a chain.

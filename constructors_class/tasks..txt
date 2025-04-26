@@ -46,4 +46,4 @@
 
 
 #gsKLAsNWM
-*Через Array.prototype. створити власний foreach, filter
+*Через Array.prototype. створити власний foreach, filter, every

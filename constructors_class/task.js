@@ -191,3 +191,18 @@ Array.prototype.customFilter = function (cb) {
 }
 
 console.log(arr.customFilter(i => typeof i === 'string'))
+
+const arrr = [2, 2, 2, 0, 4]
+
+Array.prototype.customEvery = function (cb) {
+    for (let i = 0; i < this.length; i++) {
+        if (!cb(this[i], i, this)) {
+            return false
+        }
+    }
+    return true
+
+}
+const customEvery = arrr.customEvery((element) => element > 10);
+
+console.log(customEvery)

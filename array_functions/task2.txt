@@ -1,0 +1,14 @@
+Problem: Grouping consecutive numbers
+Write a function that takes an array of integers and returns an array of subarrays, where each subarray contains consecutive numbers without gaps.
+
+Example:
+Input:
+
+[0, 1, 2, 4, 5, 8]
+Expected output:
+
+[
+[0, 1, 2],
+[4, 5],
+[8]
+]

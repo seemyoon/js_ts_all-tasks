@@ -1,0 +1,2 @@
+1. Create a generator that is an infinite generator of even numbers
+2. Create a generator that iterates over an array
